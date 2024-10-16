@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "realpython-reader"
+version = "1.0.0"
+description = "A really simple package, with a handy handful of handy utils."
+readme = "README.md"
+authors = [{ name = "Natelolzzz"}]
+dependencies = [
+    "sys",
+    "random",
+    "time",
+]
+
+[tool.bumpver]
+current_version = "1.0.0"
+version_pattern = "MAJOR.MINOR.PATCH"
+commit_message  = "Bump version {old_version} -> {new_version}"
+commit          = true
+tag             = true
+push            = false
+
+[tool.bumpver.file_patterns]
+"pyproject.toml" = ['current_version = "{version}"', 'version = "{version}"']
+"src/reader/__init__.py" = ["{version}"]
