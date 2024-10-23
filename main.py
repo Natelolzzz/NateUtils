@@ -13,9 +13,9 @@ def print_slow(string, typing_speed=300):
 
 def iseven(num):
   if num % 2:
-      return false
+      return False
   else:
-      return true
+      return True
 
 def isodd(num):
   return not iseven(num)
