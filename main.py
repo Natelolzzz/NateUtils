@@ -19,3 +19,8 @@ def iseven(num):
 
 def isodd(num):
   return not iseven(num)
+
+def correct(num):
+  if num < 0:
+    num = 0
+  return num
