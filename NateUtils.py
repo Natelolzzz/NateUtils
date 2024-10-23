@@ -1,3 +1,4 @@
+from os import read
 import random
 import sys
 import time
@@ -36,3 +37,11 @@ def readline(path, line):
   file = open(path) 
   content = file.readlines() 
   return content[line-1]
+
+def readlines(path, lines):
+  content = ""
+  if len(lines) > 0
+    line = lines.pop()
+    content += readline(path, line)
+    content += "\n"
+  return content
