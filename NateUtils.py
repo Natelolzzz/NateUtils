@@ -40,7 +40,7 @@ def readline(path, line):
 
 def readlines(path, lines):
   content = ""
-  if len(lines) > 0
+  if len(lines) > 0:
     line = lines.pop()
     content += readline(path, line)
     content += "\n"
