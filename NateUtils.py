@@ -46,5 +46,7 @@ def readlines(path, lines):
     content += "\n"
   return content
 
-def multilinetolist(list):
-  list = [y for y in (x.strip() for x in list.splitlines()) if y]
+def readlinestripped(path):
+  with open(path, 'r') as file:
+      content = file.readlines()
+  return [line.strip() for line in content if line.strip().isdigit()]
