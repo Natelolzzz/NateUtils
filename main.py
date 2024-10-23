@@ -3,7 +3,7 @@ import sys
 import time
 
 
-def print_slow(string, typing_speed):
+def print_slow(string, typing_speed=300):
   string = str(string)
   string += "\n"
   for letter in string:
