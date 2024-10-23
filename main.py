@@ -31,3 +31,11 @@ def EraseLast():
       stdout.flush()
       time.sleep(1)
   stdout.write("\n")
+
+def readlines(path, lines):
+  file = open(path) 
+  line_content = []
+  for pos, l_num in enumerate(file): 
+      if pos in lines: 
+          line_content += l_num
+  return line_content
