@@ -45,3 +45,6 @@ def readlines(path, lines):
     content += readline(path, line)
     content += "\n"
   return content
+
+def multilinetolist(list):
+  list = [y for y in (x.strip() for x in list.splitlines()) if y]
