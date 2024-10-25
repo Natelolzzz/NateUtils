@@ -1,6 +1,7 @@
 import random
 import sys
 import time
+import os
 from sys import stdout
 
 def print_slow(string, typing_speed=300):
@@ -52,3 +53,9 @@ def readlinestripped(path):
 
 def multilinetolist(list):
   list = [y for y in (x.strip() for x in list.splitlines()) if y]
+
+def clear_screen():
+  if os.name == 'nt':
+    _ = os.system('cls')
+  else:
+    _ = os.system('clear')
