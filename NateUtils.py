@@ -3,6 +3,7 @@ import sys
 import time
 import os
 from sys import stdout
+from datetime import datetime
 
 def print_slow(string, typing_speed=300):
   string = str(string)
@@ -59,3 +60,7 @@ def clear_screen():
     _ = os.system('cls')
   else:
     _ = os.system('clear')
+
+def current_time():
+  now = datetime.now()
+  return now.strftime("%H:%M:%S")
