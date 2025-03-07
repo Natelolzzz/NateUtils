@@ -52,8 +52,8 @@ def readlinestripped(path):
       content = file.readlines()
   return [line.strip() for line in content if line.strip().isdigit()]
 
-def multilinetolist(list):
-  list = [y for y in (x.strip() for x in list.splitlines()) if y]
+def multilinetolist():
+  return [y for y in (x.strip() for x in list.splitlines()) if y]
 
 def clear_screen():
   if os.name == 'nt':
