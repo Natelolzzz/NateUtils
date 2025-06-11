@@ -23,7 +23,7 @@ def isOdd(num):
 
 def clamp(num, lowest=0):
   if num < lowest:
-    num = 0
+    num = lowest
   return num
 
 def readLine(path, line):
