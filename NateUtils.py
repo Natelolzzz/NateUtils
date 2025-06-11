@@ -56,4 +56,4 @@ def currentTime():
   return now.strftime("%H:%M:%S")
 
 def rangeCheck(lower, upper, value):
-  return int(lower) <= int(value) <= int(upper)
+  return float(lower) <= float(value) <= float(upper)
