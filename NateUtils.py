@@ -1,7 +1,6 @@
 import random
 import sys
 import time
-import os
 from sys import stdout
 from datetime import datetime
 
@@ -52,12 +51,9 @@ def readlinestripped(path):
       content = file.readlines()
   return [line.strip() for line in content if line.strip().isdigit()]
 
-def clear_screen():
-  if os.name == 'nt':
-    _ = os.system('cls')
-  else:
-    _ = os.system('clear')
-
 def current_time():
   now = datetime.now()
   return now.strftime("%H:%M:%S")
+
+def rangeCheck(lower, upper, value):
+  return lower <= value <= upper
