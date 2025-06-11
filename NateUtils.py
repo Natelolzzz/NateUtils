@@ -4,7 +4,7 @@ import time
 from sys import stdout
 from datetime import datetime
 
-def print_slow(string, typing_speed=300):
+def printSlow(string, typing_speed=300):
   string = str(string)
   string += "\n"
   for letter in string:
@@ -12,13 +12,13 @@ def print_slow(string, typing_speed=300):
     sys.stdout.flush()
     time.sleep(random.random() * 10.0 / typing_speed)
 
-def iseven(num):
+def isEven(num):
   if num % 2:
       return False
   else:
       return True
 
-def isodd(num):
+def isOdd(num):
   return not iseven(num)
 
 def correct(num):
@@ -33,12 +33,12 @@ def eraseLast():
       time.sleep(1)
   stdout.write("\n")
 
-def readline(path, line):
+def readLine(path, line):
   file = open(path) 
   content = file.readlines() 
   return content[line-1]
 
-def readlines(path, lines):
+def readLines(path, lines):
   content = ""
   if len(lines) > 0:
     line = lines.pop()
@@ -46,14 +46,14 @@ def readlines(path, lines):
     content += "\n"
   return content
 
-def readlinestripped(path):
+def readLineStripped(path):
   with open(path, 'r') as file:
       content = file.readlines()
   return [line.strip() for line in content if line.strip().isdigit()]
 
-def current_time():
+def currentTime():
   now = datetime.now()
   return now.strftime("%H:%M:%S")
 
 def rangeCheck(lower, upper, value):
-  return lower <= value <= upper
+  return int(lower) <= int(value) <= int(upper)
