@@ -48,3 +48,6 @@ def rangeCheck(lower, upper, value):
     return float(lower) <= float(value) <= float(upper)
   except:
     return False
+    
+def average(list): 
+    return sum(list) / len(list) 
