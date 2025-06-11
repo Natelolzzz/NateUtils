@@ -49,7 +49,7 @@ def readLines(path, lines):
 def readLineStripped(path):
   with open(path, 'r') as file:
       content = file.readlines()
-  return [line.strip() for line in content if line.strip().isdigit()]
+  return [line.strip() for line in content]
 
 def currentTime():
   now = datetime.now()
