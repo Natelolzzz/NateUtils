@@ -21,17 +21,10 @@ def isEven(num):
 def isOdd(num):
   return not iseven(num)
 
-def correct(num):
-  if num < 0:
+def clamp(num, lowest=0):
+  if num < lowest:
     num = 0
   return num
-
-def eraseLast():
-  for i in range(1,20):
-      stdout.write("\r%d" % i)
-      stdout.flush()
-      time.sleep(1)
-  stdout.write("\n")
 
 def readLine(path, line):
   file = open(path) 
@@ -45,11 +38,6 @@ def readLines(path, lines):
     content += readline(path, line)
     content += "\n"
   return content
-
-def readLineStripped(path):
-  with open(path, 'r') as file:
-      content = file.readlines()
-  return [line.strip() for line in content]
 
 def currentTime():
   now = datetime.now()
