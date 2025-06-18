@@ -27,7 +27,13 @@ def isOdd(num): # :)
   return not(iseven(num))
 
 def average(list): # Commonly used, very handy
-    list = [toFloatSafe(item) for item in list]
+  toRemove = []
+  for i in range(0,len(list)): 
+      list[i] = toFloatSafe(list[i],"False")
+  try:
+    list.remove("False")
+    return sum(list) / len(list) 
+  except:
     return sum(list) / len(list) 
 
 # File Utils
@@ -56,14 +62,14 @@ def clamp(num, lowest=0): # Basically just another input validation thing
     num = toIntSafe(lowest)
   return num
 
-def toIntSafe(num): # Duo of automatic safety converts, so shouldnt throw errors on incorrect input. Just check if = to 0, ask for new input or handle otherwise
+def toIntSafe(num,returnval=0): # Duo of automatic safety converts, so shouldnt throw errors on incorrect input. Just check if = to 0, ask for new input or handle otherwise
   try:
     return int(num)
   except:
-    return 0
+    return returnval
 
-def toFloatSafe(num):
+def toFloatSafe(num,returnval=0):
   try:
     return float(num)
   except:
-    return 0
+    return returnval
