@@ -19,7 +19,7 @@ def currentTime(): # Kinda handy, use it sometimes
 
 # Maths Utils
 def isEven(num): # You'd be surprised how much I use this
-  if num % 2:
+  if toIntSafe(num) % 2:
       return False
   else:
       return True
@@ -28,6 +28,7 @@ def isOdd(num): # :)
   return not(iseven(num))
 
 def average(list): # Commonly used, very handy
+    list = [toFloatSafe(item) for item in list]
     return sum(list) / len(list) 
 
 # File Utils
@@ -47,11 +48,23 @@ def readLines(path, lines): # self explanatory
 # Validation Utils
 def rangeCheck(lower, upper, value): # Check if an integer is inbetween two other integers
   try:
-    return float(lower) <= float(value) <= float(upper)
+    return toFloatSafe(lower) <= toFloatSafe(value) <= toFloatSafe(upper)
   except:
     return False
 
 def clamp(num, lowest=0): # Basically just another input validation thing
-  if num < lowest:
-    num = lowest
+  if toIntSafe(num) < toIntSafe(lowest):
+    num = toIntSafe(lowest)
   return num
+
+def toIntSafe(num): # Duo of automatic safety converts, so shouldnt throw errors on incorrect input. Just check if = to 0, ask for new input or handle otherwise
+  try:
+    return int(num)
+  except:
+    return 0
+
+def toFloatSafe(num):
+  try:
+    return float(num)
+  except:
+    return 0
