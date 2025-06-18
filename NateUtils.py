@@ -1,5 +1,4 @@
 import random
-import sys
 import time
 from sys import stdout
 from datetime import datetime
