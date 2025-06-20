@@ -24,7 +24,7 @@ def isEven(num): # You'd be surprised how much I use this
       return True
 
 def isOdd(num): # :)
-  return not(iseven(num))
+  return not(isEven(num))
 
 def average(list): # Commonly used, very handy
   toRemove = []
