@@ -1,6 +1,4 @@
-import random
-import time
-from sys import stdout
+import random, time, sys
 from datetime import datetime
 
 # Generic Utils
@@ -15,6 +13,16 @@ def printSlow(string, typing_speed=300): # A horrific crime, which I am only put
 def currentTime(): # Kinda handy, use it sometimes
   now = datetime.now()
   return now.strftime("%H:%M:%S")
+
+def addSuffix(num): # Looks profesional
+    if abs(num) >= 1_000_000_000:
+        return f"{num / 1_000_000_000:.1f}B"
+    elif abs(num) >= 1_000_000:
+        return f"{num / 1_000_000:.1f}M"
+    elif abs(num) >= 1_000:
+        return f"{num / 1_000:.1f}K"
+    else:
+        return str(num)
 
 # Maths Utils
 def isEven(num): # You'd be surprised how much I use this
