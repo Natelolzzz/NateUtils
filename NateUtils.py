@@ -43,6 +43,12 @@ def average(list): # Commonly used, very handy
     return sum(list) / len(list) 
   except:
     return sum(list) / len(list) 
+    
+def listSimilarity(list1, list2): # returns % of how similar two lists are
+    set1, set2 = set(list1), set(list2)
+    intersection = set1.intersection(set2)
+    similarity = (len(intersection) / max(len(set1), len(set2))) * 100
+    return similarity
 
 # File Utils
 def readLine(path, line): # self explanatory
